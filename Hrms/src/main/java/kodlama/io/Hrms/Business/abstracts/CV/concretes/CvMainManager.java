@@ -50,15 +50,15 @@ public CvMainManager(CvMainDao cvMainDao, ImageService imageService, DepartmentD
 		this.jobSeekerDao=jobSeekerDao;
 	}
 
-//@Override
-//public DataResult<CvMain> imageUpload(int cvMainId, MultipartFile multipartFile) throws IOException {
-//
-//	CvMain cvMain = this.cvMainDao.findById(cvMainId).get();
-//	var result = this.ımageService.uploadImageFile(multipartFile);
-//	cvMain.setPhoto(result.getData().get("url").toString());
-//	this.cvMainDao.save(cvMain);
-//	return new SuccessDataResult<>("Fotoğrafınız başarıyla kaydedildi.");
-//}
+@Override
+public DataResult<CvMain> imageUpload(int cvMainId, MultipartFile multipartFile) throws IOException {
+
+	CvMain cvMain = this.cvMainDao.findById(cvMainId).get();
+	var result = this.ımageService.uploadImageFile(multipartFile);
+	cvMain.setPhoto(result.getData().get("url").toString());
+	this.cvMainDao.save(cvMain);
+	return new SuccessDataResult<>("Fotoğrafınız başarıyla kaydedildi.");
+}
 
 	@Override
 	public DataResult<List<CvMain>> getByJobSeekerId(int jobSeekerId) {
