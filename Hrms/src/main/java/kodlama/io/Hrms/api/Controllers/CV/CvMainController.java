@@ -48,12 +48,12 @@ public class CvMainController {
 		return new SuccessResult("Başarıyla Eklendi");
 	}
 
-	@PostMapping("/imageUpload")
-	public ResponseEntity<?> imageUpload(@RequestParam int jobSeeker, @RequestParam MultipartFile multipartFile)
-			throws IOException {
-
-		return new ResponseEntity<>(this.cvMainService.imageUpload(jobSeeker, multipartFile), HttpStatus.OK);
-	}
+//	@PostMapping("/imageUpload")
+//	public ResponseEntity<?> imageUpload(@RequestParam int jobSeeker, @RequestParam MultipartFile multipartFile)
+//			throws IOException {
+//
+//		return new ResponseEntity<>(this.cvMainService.imageUpload(jobSeeker, multipartFile), HttpStatus.OK);
+//	}
 
 	@GetMapping("/getByJobSeekerId")
 	public DataResult<List<CvMain>> getByJobSeekerId( int jobSeekerId) {

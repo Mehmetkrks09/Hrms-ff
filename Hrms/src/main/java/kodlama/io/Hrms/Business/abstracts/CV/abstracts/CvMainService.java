@@ -13,7 +13,7 @@ import kodlama.io.Hrms.entities.concretes.Dtos.CvMainDto;
 
 public interface CvMainService {
 	Result add(CvMainDto cvMainDto);
-	DataResult<CvMain> imageUpload(int cvMain, MultipartFile multipartFile) throws IOException;
+//	DataResult<CvMain> imageUpload(int cvMain, MultipartFile multipartFile) throws IOException;
 	DataResult<List<CvMain>> getByJobSeekerId(int jobSeekerId); 
 	Result update(CvMainDto cvMainDto);
 }
